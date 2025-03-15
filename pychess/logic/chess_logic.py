@@ -1,4 +1,4 @@
-def convert_square_to_index(self, square: str) -> tuple[int, int]:
+def convert_square_to_index(square: str) -> tuple[int, int]:
     letter = square[0]
     number = int(square[1])
 
