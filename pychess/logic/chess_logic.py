@@ -1,3 +1,5 @@
+from pychess.logic.test import convert_square_to_index
+
 class ChessLogic:
     def __init__(self):
         """
@@ -31,14 +33,7 @@ class ChessLogic:
 		]
         self.result = ""
 
-    def _convert_square_to_index(self, square: str) -> tuple[int, int]:
-        letter = square[0]
-        number = int(square[1])
-
-        row_index = 8 - number
-        column_index = ord(letter) - ord("a")
-
-        return (row_index, column_index) 
+     
 
     def play_move(self, move: str) -> str:
         """
@@ -57,8 +52,8 @@ class ChessLogic:
         start_square = move[0:2]
         end_square = move[2:4]
 
-        start_indexes = self._convert_square_to_index(start_square)
-        end_indexes = self._convert_square_to_index(end_square)
+        start_indexes = convert_square_to_index(start_square)
+        end_indexes = convert_square_to_index(end_square)
 
         self.board[end_indexes[0]][end_indexes[1]] = self.board[start_indexes[0]][start_indexes[1]]
         self.board[start_indexes[0]][start_indexes[1]] = ""
