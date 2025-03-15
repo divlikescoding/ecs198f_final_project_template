@@ -45,4 +45,13 @@ class ChessLogic:
         """
         
         #Implement this
-        pass
+        start_square = move[0:2]
+        end_square = move[2:4]
+
+        start_indexes = self._convert_square_to_index(start_square)
+        end_indexes = self._convert_square_to_index(end_square)
+
+        self.board[end_indexes[0]][end_indexes[1]] = self.board[start_indexes[0]][start_indexes[1]]
+        self.board[start_indexes[0]][start_indexes[1]] = ""
+
+        return move 
