@@ -1,4 +1,4 @@
-from .test import convert_square_to_index
+from logic.test import convert_square_to_index
 
 class ChessLogic:
     def __init__(self):
